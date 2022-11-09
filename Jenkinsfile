@@ -19,16 +19,17 @@ pipeline {
                 timeout(time: 5, unit: 'MINUTES') 
             }
             steps {
-            
-                USER_INPUT = input(
-                message: "Selecciona",
-                //submitter: equipo,
-                parameters: [
-                    [$class: 'ChoiceParameterDefinition',
-                        choices: ['Si','No'].join('\n'),
-                        name: 'Continuar',
-                        description: 'Seleccionar opción']
-                        ])
+                scripts {
+                    def USER_INPUT = input(
+                    message: "Selecciona",
+                    //submitter: equipo,
+                    parameters: [
+                        [$class: 'ChoiceParameterDefinition',
+                            choices: ['Si','No'].join('\n'),
+                            name: 'Continuar',
+                            description: 'Seleccionar opción']
+                            ])
+                }
                 
             
                     echo "Se ha seleccionado ${USER_INPUT}"
