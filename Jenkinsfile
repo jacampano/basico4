@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
                 scripts {
-                    def USER_INPUT = input(
+                    USER_INPUT = input(
                     message: "Selecciona",
                     //submitter: equipo,
                     parameters: [
