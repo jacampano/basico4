@@ -28,7 +28,7 @@ pipeline {
                     name: 'Continuar',
                     description: 'Seleccionar opción']
                     ])
-            }
+            
             steps {
                 echo "Se ha seleccionado ${USER_INPUT}"
             }
