@@ -15,7 +15,9 @@ pipeline {
             }
         }
         stage('Example2') {
-            timeout(time:5, unit: 'MINUTES') {
+            options {
+                timeout(time: 5, unit: 'MINUTES') 
+            }
 
             USER_INPUT = input(
             message: "Selecciona",
@@ -27,11 +29,9 @@ pipeline {
                     description: 'Seleccionar opción']
                     ])
             }
-
             steps {
-                echo "Has seleccionado ${USER_INPUT}"
+                echo "Se ha seleccionado ${USER_INPUT}"
             }
-
         }
     }
 }
