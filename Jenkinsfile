@@ -18,19 +18,20 @@ pipeline {
             options {
                 timeout(time: 5, unit: 'MINUTES') 
             }
-
-            USER_INPUT = input(
-            message: "Selecciona",
-            //submitter: equipo,
-            parameters: [
-                [$class: 'ChoiceParameterDefinition',
-                    choices: ['Si','No'].join('\n'),
-                    name: 'Continuar',
-                    description: 'Seleccionar opción']
-                    ])
-            
             steps {
-                echo "Se ha seleccionado ${USER_INPUT}"
+            
+                USER_INPUT = input(
+                message: "Selecciona",
+                //submitter: equipo,
+                parameters: [
+                    [$class: 'ChoiceParameterDefinition',
+                        choices: ['Si','No'].join('\n'),
+                        name: 'Continuar',
+                        description: 'Seleccionar opción']
+                        ])
+                
+            
+                    echo "Se ha seleccionado ${USER_INPUT}"
             }
         }
     }
