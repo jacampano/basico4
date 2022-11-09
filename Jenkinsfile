@@ -19,7 +19,7 @@ pipeline {
                 timeout(time: 5, unit: 'MINUTES') 
             }
             steps {
-                scripts {
+                script {
                     env.USER_INPUT = input(
                     message: "Selecciona",
                     //submitter: equipo,
