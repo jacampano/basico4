@@ -20,7 +20,7 @@ pipeline {
             }
             steps {
                 scripts {
-                    USER_INPUT = input(
+                    env.USER_INPUT = input(
                     message: "Selecciona",
                     //submitter: equipo,
                     parameters: [
@@ -32,7 +32,7 @@ pipeline {
                 }
                 
             
-                    echo "Se ha seleccionado ${USER_INPUT}"
+                    echo "Se ha seleccionado ${env.USER_INPUT}"
             }
         }
     }
